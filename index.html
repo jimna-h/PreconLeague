@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTG Precon League Picker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Precon League Deck Selection</h1>
+        <p>Submit your ranked deck preferences below. **You will get a new, equal random chance to win a deck if you lose a tie-breaker.**</p>
+    </header>
+
+    <section id="status-section" class="card">
+        <h2>Submission Status</h2>
+        <div id="player-status-container">
+            <p>Loading status...</p>
+        </div>
+        <p class="tan-note">Green names have submitted their deck lists.</p>
+    </section>
+
+    <section id="selection-section" class="card">
+        <h2>Your Ranked Choices</h2>
+        <form id="deck-selection-form">
+            <div class="form-group">
+                <label for="player-name">Your Name (Must match the roster name):</label>
+                <input type="text" id="player-name" required>
+            </div>
+            <div id="deck-preferences-container">
+                </div>
+
+            <button type="submit" id="submit-button">Submit My List</button>
+        </form>
+    </section>
+
+    <hr>
+
+    <section id="assignment-section" class="card organizer-only">
+        <h2>🏆 Deck Assignment (Organizer Only)</h2>
+        <p class="tan-note">Use this section to run the allocation logic.</p>
+
+        <div class="form-group">
+            <label for="league-players">Paste ALL League Player Names (One per line):</label>
+            <textarea id="league-players" rows="5" placeholder="Alice&#10;Bob&#10;Charlie&#10;Dana"></textarea>
+        </div>
+        
+        <div class="form-group">
+            <label for="num-players">Total Players:</label>
+            <input type="number" id="num-players" min="2" value="4">
+        </div>
+        <div class="form-group">
+            <label for="submission-data">Paste Submission Data (JSON Array from Google Sheet):</label>
+            <textarea id="submission-data" rows="8" placeholder='[{"PlayerName":"Alice", "Deck1":"Sliver Swarm", "Deck2":"Blast from the Past"}, ...]'></textarea>
+        </div>
+
+        <button id="run-assignment">Run Dynamic Allocation</button>
+
+        <div id="assignment-results">
+            <h3>Allocation Results:</h3>
+            <p>Results will appear here after running the script.</p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
