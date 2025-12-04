@@ -1,0 +1,242 @@
+:root {
+    --color-primary: #22577A; /* Dark Blue */
+    --color-accent: #38A3A5;  /* Teal Blue */
+    --color-tan: #D8C3A5;     /* Mid-Light Tan */
+    --color-bg-light: #EAEAEA;/* Light Grey */
+    --color-text-dark: #1E1E1E;
+    --color-success: #338562; /* Darker Green for success */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--color-bg-light);
+    color: var(--color-text-dark);
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+h1 {
+    color: var(--color-primary);
+    border-bottom: 3px solid var(--color-accent);
+    padding-bottom: 5px;
+}
+
+/* Card Styling for Sections */
+.card {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+h2 {
+    color: var(--color-primary);
+    margin-top: 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    position: relative; /* Needed for autocomplete */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+input[type="text"], input[type="number"], textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    background-color: var(--color-accent);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--color-primary);
+}
+
+.tan-note {
+    color: var(--color-tan);
+    font-style: italic;
+    margin-top: 0;
+}
+
+/* Submission Status Styling */
+#player-status-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.player-status-tag {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-weight: bold;
+    background-color: var(--color-bg-light);
+    color: var(--color-text-dark);
+    border: 1px solid #CCC;
+}
+
+.player-submitted {
+    background-color: var(--color-success);
+    color: white;
+    border: 1px solid var(--color-success);
+}
+
+/* Deck Search and Autocomplete */
+.deck-search-area {
+    position: relative;
+    z-index: 2;
+}
+
+.deck-search {
+    position: relative;
+    z-index: 2; /* Ensures input is on top */
+}
+
+.autocomplete-list {
+    list-style: none;
+    padding: 0;
+    margin: -1px 0 0 0; /* Overlap border with input */
+    border: 1px solid #CCC;
+    border-top: none;
+    max-height: 200px;
+    overflow-y: auto;
+    position: absolute;
+    width: 100%; /* Match parent container width */
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 3; /* Ensures list is on top */
+}
+
+.autocomplete-list li {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #EEE;
+    transition: background-color 0.1s;
+}
+
+.autocomplete-list li:hover {
+    background-color: #F0F8FF;
+}
+
+.deck-details-preview {
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid var(--color-tan);
+    background-color: #FFF8F0;
+    border-radius: 4px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 0.9em;
+}
+
+.deck-details-preview img {
+    width: 50px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 3px;
+    border: 1px solid var(--color-primary);
+}
+
+.color-identity-icon {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-left: 2px;
+    border: 1px solid var(--color-text-dark);
+}
+
+.custom-deck-toggle {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+.custom-deck-toggle label {
+    font-weight: normal;
+    color: var(--color-text-dark);
+    font-size: 0.9em;
+}
+
+.custom-deck-area {
+    margin-top: 5px;
+}
+
+/* Organizer Section Styling */
+.organizer-only {
+    border: 2px solid var(--color-tan);
+    background-color: #F9F9F9;
+}
+
+#assignment-results {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px dashed var(--color-primary);
+    background-color: #F0F8FF;
+}
+
+#assignment-results h3 {
+    margin-top: 0;
+    color: var(--color-accent);
+}
+
+.allocation-deck-card {
+    background-color: white;
+    border: 1px solid #CCC;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+.allocation-deck-card span {
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+/* Mobile Friendly Adjustments */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    .card {
+        padding: 15px;
+    }
+}
